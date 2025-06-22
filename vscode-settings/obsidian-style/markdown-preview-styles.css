@@ -1,0 +1,21 @@
+/* Custom styles for VS Code Markdown Preview */
+
+/* Set color for all heading levels */
+h1, h2, h3, h4, h5, h6 {
+  color: #FF4D00 !important; /* Use the desired heading color. !important might be needed to override default styles */
+  font-weight: bold; /* Ensure headings are bold */
+}
+
+/* Optional: Style the horizontal rules (---) if desired */
+/*
+hr {
+  border-top: 2px solid #FF4D00 !important; 
+} 
+*/
+
+/* Optional: You can add more specific styles if needed */
+/*
+h1 {
+  border-bottom: 1px solid #666666; 
+}
+*/ 

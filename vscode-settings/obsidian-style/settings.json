@@ -1,0 +1,23 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    // Custom markdown syntax highlighting
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "entity.name.section.markdown", // Heading text
+                    "punctuation.definition.heading.markdown" // Heading marker
+                 ],
+                "settings": {
+                    "foreground": "#FF4D00",
+                    "fontStyle": "bold"
+                }
+            }
+        ]
+    },
+    // Custom CSS for Markdown Preview
+    "markdown.styles": [
+        ".vscode/markdown-preview-styles.css"
+    ]
+}
