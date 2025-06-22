@@ -1,6 +1,8 @@
 {
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1000,
+    // Auto save
+    // "files.autoSave": "afterDelay",
+    // "files.autoSaveDelay": 1000,
+    
     // Custom markdown syntax highlighting
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -16,6 +18,7 @@
             }
         ]
     },
+
     // Custom CSS for Markdown Preview
     "markdown.styles": [
         ".vscode/markdown-preview-styles.css"
