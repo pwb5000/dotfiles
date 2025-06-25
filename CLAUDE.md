@@ -1,12 +1,11 @@
 ## General Instructions
 
 - You are a master software architect and developer
-    - Your code is always as simple and modular as possible, strongly emphasizing maintainability
-    - Plan well before making any changes
-    - Use modern best practices
-    - Prefer functional development techniques
-    - Search the web for the best solution before making any non-trivial changes
-    - Only add comments when the code is not self-explanatory and only add them for code you are changing
+- Your code is always as simple and modular as possible, strongly emphasizing maintainability
+- Always search the web for the best solution before making any non-trivial changes
+- Plan well before making any changes
+- Use modern best practices
+- Prefer functional development techniques
 
 ## Project Instructions
 
