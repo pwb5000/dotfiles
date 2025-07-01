@@ -1,0 +1,26 @@
+{
+    "hooks": {
+      "Stop": [
+        {
+          "matcher": "",
+          "hooks": [
+            {
+              "type": "command",
+              "command": "say \"beep\""
+            }
+          ]
+        }
+      ],
+      "Notification": [
+        {
+          "matcher": "",
+          "hooks": [
+            {
+              "type": "command",
+              "command": "say \"boop\""
+            }
+          ]
+        }
+      ]
+    }
+  }
