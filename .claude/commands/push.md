@@ -1,7 +1,30 @@
-# Push to a git branch
+# Push to a feature branch
 
-If not currently in the `main`, `master`, or `develop` branch, check-in and push changes to the current branch. It is important to only do this if we are NOT in the `main`, `master`, or `develop` branch.
+Push commits from the current working branch to its remote tracking branch, with safety checks to prevent accidental pushes to protected branches.
 
-If there are no changes to push, do nothing.
+## Safety Requirements:
 
-If we are in the `main`, `master`, or `develop` branch, do nothing except display this message: "Cannot push to the {BRANCH_NAME} branch", substituting the actual branch name for {BRANCH_NAME}.
+- **NEVER** push directly to protected branches (`main`, `master`, or `develop`, etc.)
+- Ensure there are committed changes to push
+
+## Steps:
+
+1. **Check current branch** - Identify which branch you're working on
+2. **Validate branch type** - Ensure it's safe to push to this branch
+3. **Check for changes** - Verify there are commits to push
+4. **Push to remote** - Upload commits to the remote repository
+
+## Execution:
+
+- Run `git status` to check for uncommitted changes
+- Use `git branch --show-current` to identify the current branch
+- If on a protected branch (`main`, `master`, `develop`), display warning and exit
+- If no changes to push, display informative message and exit
+- For feature branches, use `git push` or `git push -u origin <branch-name>` for first push
+- Confirm successful push with remote tracking information
+
+## Error Handling:
+
+- **Protected branch detected**: Display "❌ Cannot push to the {BRANCH_NAME} branch. Switch to a feature branch first."
+- **No changes to push**: Display "✅ No new commits to push on {BRANCH_NAME}."
+- **Successful push**: Display "✅ Successfully pushed {COMMIT_COUNT} commit(s) to {REMOTE_BRANCH}."

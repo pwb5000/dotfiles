@@ -1,8 +1,20 @@
 # Sync the default git branch
 
-Take note of any changes in the current active branch that have not been checked-in as we may move these to a different branch in the next step.
+Sync the repository's default branch (main/master) with the latest changes from the remote, while preserving any uncommitted local changes.
 
-If we are not in the default branch, move any unchecked-in changes from the active branch into the default branch, but do not check them in. Switch to the default branch of the repository to make it the current active branch (if it is not already).
+## Steps:
 
-When we are in the default branch, and any unchecked-in changes from the previous branch have been moved to the default branch, pull any outstanding changes from remote into the default branch to bring to update it.
+1. **Identify the default branch** (usually `main` or `master`, but may be repository specific)
+2. **Preserve uncommitted changes** by stashing them if they exist
+3. **Switch to the default branch** if not already there
+4. **Fetch and merge** the latest changes from the remote
+5. **Restore uncommitted changes** if they were stashed
 
+## Execution:
+
+- First check `git status` to identify any uncommitted changes
+- If uncommitted changes exist, use `git stash` to temporarily save them
+- Use `git checkout <default-branch>` or `git switch <default-branch>` to ensure you're on the correct branch
+- Run `git fetch origin` followed by `git merge origin/<default-branch>` to sync with remote
+- If changes were stashed, use `git stash pop` to restore them
+- Handle any merge conflicts that arise during the sync process
