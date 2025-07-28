@@ -1,10 +1,17 @@
+# Navigate to a repo in the git folder
 gogit() {
-  cd ~/Documents/git/"$1"
+  local repo_name="$1"
+  cd ~/Documents/git/"$repo_name"
 }
 
+# Open a file in a text editor
 edit() {
- open -a cursor "$1"
+  local file_path="$1"
+  open -a cursor "$file_path"
 }
 
-alias zsh-edit="edit ~/.zshrc"
+# Kick off an empty commit to trigger a build
 alias git-trigger-build='git commit --allow-empty -m "Trigger Build"'
+
+# Misc convenience commands
+alias zsh-edit="edit ~/.zshrc"
