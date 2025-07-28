@@ -1,30 +1,5 @@
-# Push to a feature branch
+# Create and/or commit to a git branch
 
-Push commits from the current working branch to its remote tracking branch, with safety checks to prevent accidental pushes to protected branches.
+If we are in the 'main', 'master', or 'develop' branch, create a new branch. Name it based on the user input (if provided), otherwise name it based upon the changes. Then add any uncommited changes to the new branch. If you created a new branch, switch to it to make it the current branch.
 
-## Safety Requirements:
-
-- **NEVER** push directly to protected branches (`main`, `master`, or `develop`, etc.)
-- Ensure there are committed changes to push
-
-## Steps:
-
-1. **Check current branch** - Identify which branch you're working on
-2. **Validate branch type** - Ensure it's safe to push to this branch
-3. **Check for changes** - Verify there are commits to push
-4. **Push to remote** - Upload commits to the remote repository
-
-## Execution:
-
-- Run `git status` to check for uncommitted changes
-- Use `git branch --show-current` to identify the current branch
-- If on a protected branch (`main`, `master`, `develop`), display warning and exit
-- If no changes to push, display informative message and exit
-- For feature branches, use `git push` or `git push -u origin <branch-name>` for first push
-- Confirm successful push with remote tracking information
-
-## Error Handling:
-
-- **Protected branch detected**: Display "❌ Cannot push to the {BRANCH_NAME} branch. Switch to a feature branch first."
-- **No changes to push**: Display "✅ No new commits to push on {BRANCH_NAME}."
-- **Successful push**: Display "✅ Successfully pushed {COMMIT_COUNT} commit(s) to {REMOTE_BRANCH}."
+If we are already in a branch that is not 'main', 'master', or 'develop', just add any uncommited changes to the current branch.
