@@ -1,30 +1,40 @@
-# Push to a feature branch
+# Create, commit, and push to a git branch
 
-Push commits from the current working branch to its remote tracking branch, with safety checks to prevent accidental pushes to protected branches.
+## Branch Creation and Management
+If we are in the 'main', 'master', or 'develop' branch:
+1. Create a new feature branch with a descriptive name based on user input or changes
+2. Use kebab-case naming convention (e.g., feature/user-authentication, fix/login-bug)
+3. Switch to the new branch
 
-## Safety Requirements:
+If already in a feature branch (not 'main', 'master', or 'develop'):
+1. Stay on the current branch
+2. Optionally offer to rename if the branch name doesn't reflect current changes
 
-- **NEVER** push directly to protected branches (`main`, `master`, or `develop`, etc.)
-- Ensure there are committed changes to push
+## Commit Process
+1. Check git status to show what will be committed
+2. Stage all changes or allow selective staging
+3. Create a meaningful commit message following conventional commits format:
+   - feat: new feature
+   - fix: bug fix
+   - docs: documentation changes
+   - style: formatting changes
+   - refactor: code refactoring
+   - test: adding tests
+   - chore: maintenance tasks
 
-## Steps:
+## Push and Remote Tracking
+1. Check if the branch has an upstream remote
+2. If no upstream exists, push with `-u` flag to set upstream tracking
+3. If upstream exists, perform a regular push
+4. Handle any push conflicts by offering to pull and rebase first
 
-1. **Check current branch** - Identify which branch you're working on
-2. **Validate branch type** - Ensure it's safe to push to this branch
-3. **Check for changes** - Verify there are commits to push
-4. **Push to remote** - Upload commits to the remote repository
+## Safety Checks
+- Warn before pushing to protected branches (main, master, develop)
+- Check for merge conflicts before pushing
+- Verify remote repository connection
+- Show push summary with commit count and branch information
 
-## Execution:
-
-- Run `git status` to check for uncommitted changes
-- Use `git branch --show-current` to identify the current branch
-- If on a protected branch (`main`, `master`, `develop`), display warning and exit
-- If no changes to push, display informative message and exit
-- For feature branches, use `git push` or `git push -u origin <branch-name>` for first push
-- Confirm successful push with remote tracking information
-
-## Error Handling:
-
-- **Protected branch detected**: Display "❌ Cannot push to the {BRANCH_NAME} branch. Switch to a feature branch first."
-- **No changes to push**: Display "✅ No new commits to push on {BRANCH_NAME}."
-- **Successful push**: Display "✅ Successfully pushed {COMMIT_COUNT} commit(s) to {REMOTE_BRANCH}."
+## Post-Push Actions
+- Display the pushed commit(s) summary
+- Provide GitHub/GitLab URL for creating pull requests if applicable
+- Suggest next steps (create PR, continue development, etc.)

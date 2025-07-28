@@ -1,46 +1,37 @@
 # Create a pull request
 
-Create a pull request for the current feature branch, ensuring all changes are committed and pushed before opening the PR for review.
+## Pre-PR Preparation
+1. Run the instructions in the @.claude/commands/push.md file to ensure the latest changes are committed to the current branch
+2. Verify the branch is pushed to the remote repository
+3. Warn if the branch is not up to date with the remote repository, and ask if we should pull the latest changes
 
-## Prerequisites:
+## PR Creation Process
+1. **Title Creation**: Generate a clear, descriptive title that summarizes the change
+   - Keep it concise but informative (50 characters or less)
 
-1. **Ensure you're on a feature branch** (not `main`, `master`, or `develop`, etc.)
-2. **Commit all changes** - All work must be committed locally
-3. **Push the branch** - Ensure the latest commits are on the remote
-4. **Verify branch is published** - Confirm the branch exists on the remote repository
+2. **Description Generation**: Create a comprehensive PR description including:
+   - **Summary**: What was changed and why
+   - **Changes Made**: Bullet points of key modifications
+   - **Testing**: How the changes were tested
+   - **Screenshots/GIFs**: For UI changes (if applicable)
+   - **Breaking Changes**: Any backwards incompatible changes
+   - **Dependencies**: New dependencies or version updates
 
-## Steps:
+## Platform-Specific Features
+### GitHub
+- Use GitHub CLI (`gh pr create`) for command-line creation
+- Auto-link related issues using keywords (Fixes #123, Closes #456)
+- Add appropriate labels, reviewers, and assignees
+- Enable auto-merge if repository supports it
 
-1. **Validate branch status** using the branch command workflow
-2. **Push latest changes** using the push command workflow  
-3. **Publish branch if needed** - First-time push with upstream tracking
-4. **Create the pull request** using preferred method below
-5. **Open PR in browser** for review and team collaboration
+### GitLab
+- Use GitLab CLI (`glab mr create`) for command-line creation
+- Set merge request templates if available
+- Configure merge options (delete source branch, squash commits)
+- Add milestone and merge request labels
 
-## Execution Methods:
-
-### Method 1: GitHub CLI (Recommended)
-- Use `gh pr create` for interactive PR creation
-- Add title and description based on commit messages or provide custom text
-- Set reviewers, labels, and milestone as needed
-- Automatically opens PR URL when created
-
-### Method 2: GitHub Web Interface
-- Navigate to repository on GitHub
-- Use "Compare & pull request" button if available
-- Select base branch (usually `main` or `develop`) 
-- Fill in PR title, description, and metadata
-
-## Browser Opening:
-
-After PR creation, automatically open the PR in the default browser:
-- **macOS**: Use `open <pr-url>`
-- **Windows**: Use `start <pr-url>`  
-- **Linux**: Use `xdg-open <pr-url>`
-
-## PR Content Guidelines:
-
-- **Title**: Clear, descriptive summary of changes
-- **Description**: Detailed explanation of what was changed and why
-- **Link issues**: Reference any related issues or tickets
-- **Testing notes**: Include steps to test the changes
+## Post-Creation Actions
+1. Open the PR/MR in browser using platform-appropriate command:
+   - macOS: `open <url>`
+   - Windows: `start <url>`
+   - Linux: `xdg-open <url>`
