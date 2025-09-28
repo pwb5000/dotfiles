@@ -16,6 +16,7 @@
    - **Screenshots/GIFs**: For UI changes (if applicable)
    - **Breaking Changes**: Any backwards incompatible changes
    - **Dependencies**: New dependencies or version updates
+   - **IMPORTANT**: NEVER include any text saying that the PR was co-authored by Claude or any other AI
 
 ## Platform-Specific Features
 ### GitHub
